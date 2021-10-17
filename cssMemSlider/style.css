@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   width: 96%;
-  justify-content: space-between;
+  justify-content: space-around;
   max-width: 800px;
   margin: 0 auto;
   height: auto;
@@ -42,6 +42,7 @@ body {
 .main-text {
   position: relative;
   align-items: end;
+  width: 500px;
   left: 0;
 }
 .hide {
@@ -90,7 +91,10 @@ nav label {
   -o-transition: background ease-in-out 0.5s;
   transition: background ease-in-out 0.5s;
 }
-
+.text-container {
+  display: flex;
+  align-items: flex-end;
+}
 #slide-1,
 #slide-2,
 #slide-3,
@@ -124,11 +128,11 @@ nav label:hover,
   animation: left 0.5s linear;
 }
 
-#dot-1:checked ~ #text-1,
-#dot-2:checked ~ #text-2,
-#dot-3:checked ~ #text-3,
-#dot-4:checked ~ #text-4,
-#dot-5:checked ~ #text-5 {
+#dot-1:checked ~ .text-container #text-1,
+#dot-2:checked ~ .text-container #text-2,
+#dot-3:checked ~ .text-container #text-3,
+#dot-4:checked ~ .text-container #text-4,
+#dot-5:checked ~ .text-container #text-5 {
   display: flex;
   animation: left 0.5s linear;
 }
@@ -138,5 +142,20 @@ nav label:hover,
   }
   to {
     left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    order: 1;
+    margin-bottom: 30px;
+  }
+  .text-container {
+    width: 100%;
+    order: 2;
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
   }
 }
