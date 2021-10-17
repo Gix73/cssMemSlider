@@ -16,6 +16,7 @@ body {
   max-width: 800px;
   margin: 0 auto;
   height: auto;
+  overflow-x: hidden;
   /* background-color: brown; */
 }
 .slider-wrapper {
@@ -33,7 +34,7 @@ body {
   position: relative;
   display: block;
   max-width: 100%;
-  max-height: 500px;
+  max-height: 480px;
   height: auto;
   border-radius: 33px;
   object-fit: cover;
@@ -44,4 +45,100 @@ body {
 }
 .hide {
   display: none;
+}
+input {
+  display: none;
+}
+nav label {
+  cursor: pointer;
+  display: inline-block;
+  height: 8px;
+  margin: 25px 12px 0 16px;
+  position: relative;
+  width: 8px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+nav label:after {
+  border: 2px solid #ddd;
+  content: " ";
+  display: flex;
+  height: 12px;
+  left: -4px;
+  position: absolute;
+  top: -4px;
+  width: 12px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+
+nav label {
+  cursor: pointer;
+  display: inline-block;
+  height: 8px;
+  margin: 25px 12px 0 16px;
+  position: relative;
+  width: 8px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: background ease-in-out 0.5s;
+  -moz-transition: background ease-in-out 0.5s;
+  -o-transition: background ease-in-out 0.5s;
+  transition: background ease-in-out 0.5s;
+}
+
+#slide-1,
+#slide-2,
+#slide-3,
+#slide-4,
+#slide-5 {
+  display: none;
+}
+#text-1,
+#text-2,
+#text-3,
+#text-4,
+#text-5 {
+  display: none;
+}
+
+nav label:hover,
+#dot-1:checked ~ nav #label-1,
+#dot-2:checked ~ nav #label-2,
+#dot-3:checked ~ nav #label-3,
+#dot-4:checked ~ nav #label-4,
+#dot-5:checked ~ nav #label-5 {
+  background: #ddd;
+}
+
+#dot-1:checked ~ #slide-1,
+#dot-2:checked ~ #slide-2,
+#dot-3:checked ~ #slide-3,
+#dot-4:checked ~ #slide-4,
+#dot-5:checked ~ #slide-5 {
+  display: flex;
+  animation: left 0.5s linear;
+}
+
+#dot-1:checked ~ #text-1,
+#dot-2:checked ~ #text-2,
+#dot-3:checked ~ #text-3,
+#dot-4:checked ~ #text-4,
+#dot-5:checked ~ #text-5 {
+  display: flex;
+  animation: left 0.5s linear;
+}
+@keyframes left {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
 }
